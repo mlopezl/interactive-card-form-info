@@ -1,8 +1,10 @@
+import CardContainer from "./components/card/CardContainer"
+
 function App() {
   return (
-    <>
-    <h1 className="text-red-500">Hola Mundo</h1>
-    </>
+    <div className="w-full min-h-screen bg-White font-Space-Grotesk">
+      <CardContainer/>
+    </div>
   )
 }
 
