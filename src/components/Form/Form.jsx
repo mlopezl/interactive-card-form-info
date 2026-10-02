@@ -5,7 +5,7 @@ import FormExpCVSInput from "./FormExpCVSInput";
 function Form() {
   return (
     <form
-      className="w-full pt-20 h-full flex flex-col gap-4 justify-center items-center p-5"
+      className="w-full pt-20 h-full flex flex-col gap-4 justify-center items-center p-5 md:pt-0 max-w-80"
       action="post"
     >
       <FormBasicInput label={"cardholder name"} id={"name"} 

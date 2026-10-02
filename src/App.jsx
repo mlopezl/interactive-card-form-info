@@ -3,7 +3,7 @@ import FormContainer from "./components/Form/FormContainer"
 
 function App() {
   return (
-    <div className="w-full min-h-screen bg-White font-Space-Grotesk">
+    <div className="w-full min-h-screen bg-White font-Space-Grotesk md:flex">
       <CardContainer/>
       <FormContainer/>
     </div>

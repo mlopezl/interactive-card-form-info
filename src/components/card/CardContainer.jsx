@@ -6,8 +6,9 @@ import CardBack from  './CardBack'
 
 function CardContainer(){
     return(
-        <header className='w-full h-50 relative'>
-            <img className='w-full h-50 absolute z-0' src={backgroundMobile} alt="" />
+        <header className='w-full h-50 relative md:w-1/3 md:min-h-screen'>
+            <img className='w-full h-50 absolute z-0 md:hidden' src={backgroundMobile} alt="" />
+            <img className='hidden w-full h-full absolute z-0 md:block' src={backgroundDesktop} alt="" />
             <CardFront/>
             <CardBack/>
         </header>
