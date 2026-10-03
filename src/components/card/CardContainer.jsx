@@ -4,13 +4,13 @@ import backgroundDesktop  from '../../../public/images/bg-main-desktop.png';
 import CardFront from './CardFront';
 import CardBack from  './CardBack'
 
-function CardContainer(){
+function CardContainer({name, cardNumber, MM, YY, cvc}){
     return(
         <header className='w-full h-50 relative md:w-1/3 md:min-h-screen'>
             <img className='w-full h-50 absolute z-0 md:hidden' src={backgroundMobile} alt="" />
             <img className='hidden w-full h-full absolute z-0 md:block' src={backgroundDesktop} alt="" />
-            <CardFront/>
-            <CardBack/>
+            <CardFront name={name} cardNumber={cardNumber} MM={MM} YY={YY} />
+            <CardBack cvc={cvc}/>
         </header>
     )
 }

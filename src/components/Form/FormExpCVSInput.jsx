@@ -1,4 +1,4 @@
-function FormExpCVSInput(){
+function FormExpCVSInput({MM, changeMM, YY, changeYY, cvc, changeCvc}){
     return(
         <div className="w-full flex flex-col gap-2">
         <label
@@ -9,6 +9,8 @@ function FormExpCVSInput(){
         </label>
         <div className="flex gap-2">
           <input
+            value={MM}
+            onChange={(e) => changeMM(e.target.value)}
             className="w-15 text-center border-1 border-Gray-200 h-10 rounded-lg p-2
                 placeholder:text-Gray-400"
             type="number"
@@ -18,6 +20,8 @@ function FormExpCVSInput(){
             placeholder="MM"
           />
           <input
+          value={YY}
+          onChange={(e) => changeYY(e.target.value)}
             className="w-15 text-center border-1 border-Gray-200 h-10 rounded-lg p-2
                 placeholder:text-Gray-400"
             type="number"
@@ -27,6 +31,8 @@ function FormExpCVSInput(){
             placeholder="YY"
           />
           <input
+            value={cvc}
+            onChange={(e) => changeCvc(e.target.value)}
             className="w-35 pl-3 border-1 border-Gray-200 h-10 rounded-lg p-2
                 placeholder:text-Gray-400"
             type="number"
