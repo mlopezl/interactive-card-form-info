@@ -11,35 +11,38 @@ function FormBasicInput({
   setError
 }) {
   const handleChange = (e) => {
-    const inputValue = e.target.value;
+  const inputValue = e.target.value;
 
-    if (id === "name") {
-      changeName(inputValue);
+  if (id === "name") {
+    changeName(inputValue);
 
-      if (inputValue.trim() === "") {
-        setError("Can't be empty");
-      } else if (/\d/.test(inputValue)) {
-        setError("Numbers are not allowed");
-      } else {
-        setError("");
-      }
-
-      return;
-    }
-
-    const formattedValue = inputValue
-      .replace(/\D/g, "")
-      .slice(0, 16)
-      .replace(/\d{4}(?=\d)/g, "$& ");
-
-    changeCardNumber(formattedValue);
-
-    if (formattedValue.trim() === "") {
+    if (inputValue.trim() === "") {
       setError("Can't be empty");
+    } else if (/\d/.test(inputValue)) {
+      setError("Numbers are not allowed");
     } else {
       setError("");
     }
-  };
+
+    return;
+  }
+
+  // Detectamos letras antes de eliminarlas
+  if (/[a-zA-Z]/.test(inputValue)) {
+    setError("Wrong format, numbers only");
+  } else if (inputValue.trim() === "") {
+    setError("Can't be empty");
+  } else {
+    setError("");
+  }
+
+  const formattedValue = inputValue
+    .replace(/\D/g, "")
+    .slice(0, 16)
+    .replace(/\d{4}(?=\d)/g, "$& ");
+
+  changeCardNumber(formattedValue);
+};
 
   return (
     <div className="w-full flex flex-col gap-2">

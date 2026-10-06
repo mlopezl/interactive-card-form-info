@@ -46,6 +46,11 @@ const [cvcError, setCvcError] = useState("");
 
     if (isValid) {
       submitForm();
+      changeName("");
+      changeCardNumber("")
+      changeCvc("")
+      changeMM("")
+      changeYY("")
     }
   };
 
