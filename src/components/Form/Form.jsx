@@ -2,6 +2,7 @@ import FormBasicInput from "./FormBasicInput";
 import FormButton from "./FormButton";
 import FormExpCVSInput from "./FormExpCVSInput";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 function Form({
   name,
@@ -44,6 +45,27 @@ const [cvcError, setCvcError] = useState("");
       setCardNumberError("");
     }
 
+    if (!/^(0[1-9]|1[0-2])$/.test(MM)) {
+  setMmError(MM ? "Invalid month" : "Can't be empty");
+  isValid = false;
+} else {
+  setMmError("");
+}
+
+if (!/^\d{2}$/.test(YY)) {
+  setYyError(YY ? "Year must have 2 digits" : "Can't be empty");
+  isValid = false;
+} else {
+  setYyError("");
+}
+
+if (!/^\d{3}$/.test(cvc)) {
+  setCvcError(cvc ? "CVC must have 3 digits" : "Can't be empty");
+  isValid = false;
+} else {
+  setCvcError("");
+}
+
     if (isValid) {
       submitForm();
       changeName("");
@@ -55,9 +77,12 @@ const [cvcError, setCvcError] = useState("");
   };
 
   return (
-    <form
+    <motion.form
       className="w-full pt-20 h-full flex flex-col gap-4 justify-center items-center p-5 md:pt-0 max-w-80"
       onSubmit={handleSubmit}
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <FormBasicInput
         name={name}
@@ -100,7 +125,7 @@ const [cvcError, setCvcError] = useState("");
       />
 
       <FormButton />
-    </form>
+    </motion.form>
   );
 }
 

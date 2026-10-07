@@ -3,11 +3,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* --color-Linear-Gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); */
   --color-Red-400: hsl(0, 100%, 66%);
   --color-White: hsl(0, 100%, 100%);
   --color-Gray-200: hsl(270, 3%, 87%);
   --color-Gray-400: hsl(212, 12%, 71%);
   --color-Purple-950: hsl(278, 68%, 11%);
   --font-Space-Grotesk: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --input-gradient: linear-gradient(90deg, hsl(249 99% 64%), hsl(278 94% 30%));
+}
+
+.input-gradient:focus {
+  outline: none;
+}
+
+.input-gradient:focus[aria-invalid="false"] {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--color-White), var(--color-White)) padding-box,
+    var(--input-gradient) border-box;
 }

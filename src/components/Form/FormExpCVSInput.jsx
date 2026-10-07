@@ -72,34 +72,49 @@ function FormExpCVSInput({
       <div className="flex gap-2">
 
         <input
-          value={MM}
-          onChange={handleMMChange}
-          className="w-15 text-center border border-Gray-200 h-10 rounded-lg p-2 placeholder:text-Gray-400"
-          type="text"
-          inputMode="numeric"
-          id="month"
-          placeholder="MM"
-        />
+  value={MM}
+  onChange={handleMMChange}
+  aria-invalid={Boolean(mmError)}
+  className={`input-gradient border w-15 text-center h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 ${
+    mmError
+      ? "border-Red-400 focus:border-Red-400 focus:ring-Red-400"
+      : "border-Gray-200"
+  }`}
+  type="text"
+  inputMode="numeric"
+  id="month"
+  placeholder="MM"
+/>
 
-        <input
-          value={YY}
-          onChange={handleYYChange}
-          className="w-15 text-center border border-Gray-200 h-10 rounded-lg p-2 placeholder:text-Gray-400"
-          type="text"
-          inputMode="numeric"
-          id="year"
-          placeholder="YY"
-        />
+<input
+  value={YY}
+  onChange={handleYYChange}
+  aria-invalid={Boolean(yyError)}
+  className={`input-gradient border w-15 text-center h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 ${
+    yyError
+      ? "border-Red-400 focus:border-Red-400 focus:ring-Red-400"
+      : "border-Gray-200"
+  }`}
+  type="text"
+  inputMode="numeric"
+  id="year"
+  placeholder="YY"
+/>
 
-        <input
-          value={cvc}
-          onChange={handleCvcChange}
-          className="w-35 pl-3 border border-Gray-200 h-10 rounded-lg p-2 placeholder:text-Gray-400"
-          type="text"
-          inputMode="numeric"
-          id="cvc"
-          placeholder="e.g. 123"
-        />
+<input
+  value={cvc}
+  onChange={handleCvcChange}
+  aria-invalid={Boolean(cvcError)}
+  className={`input-gradient border w-35 pl-3 h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 ${
+    cvcError
+      ? "border-Red-400 focus:border-Red-400 focus:ring-Red-400"
+      : "border-transparent"
+  }`}
+  type="text"
+  inputMode="numeric"
+  id="cvc"
+  placeholder="e.g. 123"
+/>
 
       </div>
 

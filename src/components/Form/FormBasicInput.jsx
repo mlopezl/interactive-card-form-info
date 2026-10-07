@@ -56,7 +56,12 @@ function FormBasicInput({
       <input
         value={id === "name" ? name : cardNumber}
         onChange={handleChange}
-        className="border border-Gray-200 h-10 rounded-lg p-2 placeholder:text-Gray-400"
+        aria-invalid={Boolean(error)}
+        className={`input-gradient border h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 ${
+  error
+    ? "border-Red-400 focus:border-Red-400 focus:ring-Red-400"
+    : "border-Gray-200"
+}`}
         type={type}
         id={id}
         placeholder={`e.g ${placeholder}`}
