@@ -14,7 +14,7 @@ function FormCompletedMessage({resetForm}){
             <p className='text-md text-Gray-400 font-semibold'>We've added your card details</p>
             <button
             onClick={resetForm}
-            className="w-full p-3 text-White rounded-lg bg-Purple-950">Continue</button>
+            className="w-full p-3 text-White rounded-lg bg-Purple-950 hover:brightness-140">Continue</button>
         </motion.div>
     )
 }

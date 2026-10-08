@@ -75,7 +75,7 @@ function FormExpCVSInput({
   value={MM}
   onChange={handleMMChange}
   aria-invalid={Boolean(mmError)}
-  className={`input-gradient border w-15 text-center h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 ${
+  className={`input-gradient border w-15 text-center h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 hover:cursor-pointer ${
     mmError
       ? "border-Red-400 focus:border-Red-400 focus:ring-Red-400"
       : "border-Gray-200"
@@ -90,7 +90,7 @@ function FormExpCVSInput({
   value={YY}
   onChange={handleYYChange}
   aria-invalid={Boolean(yyError)}
-  className={`input-gradient border w-15 text-center h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 ${
+  className={`input-gradient border w-15 text-center h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 hover:cursor-pointer ${
     yyError
       ? "border-Red-400 focus:border-Red-400 focus:ring-Red-400"
       : "border-Gray-200"
@@ -105,10 +105,10 @@ function FormExpCVSInput({
   value={cvc}
   onChange={handleCvcChange}
   aria-invalid={Boolean(cvcError)}
-  className={`input-gradient border w-35 pl-3 h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none focus:ring-1 ${
+  className={`input-gradient border w-35 pl-3 h-10 rounded-lg p-2 placeholder:text-Gray-400 focus:outline-none hover:cursor-pointer ${
     cvcError
       ? "border-Red-400 focus:border-Red-400 focus:ring-Red-400"
-      : "border-transparent"
+      : "border-Gray-200"
   }`}
   type="text"
   inputMode="numeric"

@@ -19,7 +19,8 @@
   outline: none;
 }
 
-.input-gradient:focus[aria-invalid="false"] {
+.input-gradient:focus[aria-invalid="false"],
+.input-gradient:hover[aria-invalid="false"] {
   border-color: transparent;
   background:
     linear-gradient(var(--color-White), var(--color-White)) padding-box,
